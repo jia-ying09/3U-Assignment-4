@@ -37,11 +37,11 @@ public class A4Q6 {
                 // if the speed is 1-20 above the limit: $100               
                 System.out.println("You are speeding and your fine is: $100");
             } else {
-                if (pass >= 21 && pass <= 30){
+                if (pass >= 21 && pass <= 30) {
                     // if the speed is 21-30 above the limit: $270               
                     System.out.println("You are speeding and your fine is: $270");
                 } else {
-                    if (pass >= 31){
+                    if (pass >= 31) {
                         // if the speed is 31-up above the limit: $500               
                         System.out.println("You are speeding and your fine is: $500");
                     }
