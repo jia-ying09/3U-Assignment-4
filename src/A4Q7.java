@@ -18,23 +18,43 @@ public class A4Q7 {
         // import scanner
         Scanner input = new Scanner(System.in);
 
-        //ask for the sum of the dice
-        System.out.println("Enter the sum of the dice:");
+        //loop
+        while (true) {
 
-        //calculating the number
-        int roll = input.nextInt();
-        int first = roll + 1;
+            //ask for the sum of the dice
+            System.out.println("Enter the sum of the dice:");
 
-
-        {
-            //first roll: tell them what square they are on
-            System.out.println("You are now on square " + first);
+            //calculating the number
+            int roll = input.nextInt();
+            int first = roll + 1;
+            int firstSpot = roll + first;
+            int spot = roll + firstSpot;
 
             //other rolls: tell them what square they are on
+            if (roll >= 2 && roll <= 12) {
+
+                //first spot
+                System.out.println("You are now on square " + first);
+                              
+            } else {
+                if (roll == 0) {
+                    System.out.println("You quit");
+                    break;
+                }
+            }
             
-            if (roll >= 2 && roll <= 12);{        
-        System.out.println("You are now on square " + roll);
-        } else {
-                System.out.println("You quit");
+            //ask for the sum of the dice           
+            System.out.println("Enter the sum of the dice:");
+            
+             //adding amount of dice to previous spot
+                System.out.println("Your are now on square " + roll);
+
+                
+            }
+
+
+
+
+        }
     }
 }

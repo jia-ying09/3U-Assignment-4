@@ -33,7 +33,6 @@ public class A4Q10 extends javax.swing.JFrame {
         celsiusInput = new javax.swing.JTextField();
         fahrenheitButton = new javax.swing.JButton();
         celsiusButton = new javax.swing.JButton();
-        output = new javax.swing.JTextField();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -71,33 +70,26 @@ public class A4Q10 extends javax.swing.JFrame {
             }
         });
 
-        output.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                outputActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fahrenheit)
+                    .addComponent(celsius))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(celsiusInput, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fahrenheitInput, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(162, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(fahrenheitButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(celsiusButton)
                 .addGap(7, 7, 7))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(fahrenheit)
-                    .addComponent(celsius))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(fahrenheitInput, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                    .addComponent(celsiusInput)
-                    .addComponent(output))
-                .addContainerGap(178, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,9 +106,7 @@ public class A4Q10 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(celsius)
                     .addComponent(celsiusInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(output, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -135,12 +125,14 @@ public class A4Q10 extends javax.swing.JFrame {
         String celsius = celsiusInput.getText();
         
         //converting strings to integers
-        double fahrenheitInput = Integer.parseInt(fahrenheit);
-        double celsiusInput = Integer.parseInt(celsius);  
+        double fahrenheitInput = Integer.parseInt(fahrenheit); 
         
-        double celsiusOutput = fahrenheitInput / 1.8 - 32;        
+        //converying fahrenheit to celsius
+        double celsiusOutput = (fahrenheitInput - 32) /1.8 ;     
+        
         // outputting the degrees in celsius
-        output.setText ("" + celsiusOutput);
+        celsiusInput.setText("" + celsiusOutput);
+        
         
     }//GEN-LAST:event_fahrenheitButtonActionPerformed
 
@@ -156,22 +148,18 @@ public class A4Q10 extends javax.swing.JFrame {
         String celsius = celsiusInput.getText();
         
         //converting strings to doubles
-        double fahrenheitInput = Integer.parseInt(fahrenheit);
         double celsiusInput = Integer.parseInt(celsius);
         
-        //converting fahrenheit to celsius
-        double fahrenheitOutput = celsiusInput * 1.8 + 32;
+        //converting celsius tp fahrenheight
+        double fahrenheitOutput = celsiusInput*1.8+32;
+        
         // outputting the degrees in celsius      
-        output.setText("" + fahrenheitOutput);
-        //converting fahrenheit to celsius
+        fahrenheitInput.setText("" + fahrenheitOutput);
+        
         
         
                                     
     }//GEN-LAST:event_celsiusButtonActionPerformed
-
-    private void outputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outputActionPerformed
-      
-    }//GEN-LAST:event_outputActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,6 +204,5 @@ public class A4Q10 extends javax.swing.JFrame {
     private javax.swing.JTextField fahrenheitInput;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField output;
     // End of variables declaration//GEN-END:variables
 }
