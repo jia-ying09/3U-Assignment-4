@@ -17,44 +17,84 @@ public class A4Q7 {
     public static void main(String[] args) {
         // import scanner
         Scanner input = new Scanner(System.in);
+        //calculating the number
 
-        //loop
+        System.out.println("Enter the sum of the dice:");
+
+        int roll = input.nextInt() + 1;
+
+        //ask for the sum of the dice
+        while (roll >= 3 && roll <= 13) {
+
+            //first spot
+            System.out.println("You are now on square " + roll);
+
+            while (roll == 0) {
+                System.out.println("You quit");
+
+            }
+        }
         while (true) {
-
-            //ask for the sum of the dice
+            int spot = roll;
+            //other rolls: tell them what square they are on              
+            //ask for the sum of the dice      
             System.out.println("Enter the sum of the dice:");
+            if (roll >= 3 && roll <= 13) {
+                
+                //first spot 
+                int square = roll + spot;
+                System.out.println("You are now on square " + square);
+                
+                System.out.println("Enter the sum of the dice:");
+                input.nextInt;
+                // spot 
+                System.out.println("You are now on square " + square);
 
-            //calculating the number
-            int roll = input.nextInt();
-            int first = roll + 1;
-            int firstSpot = roll + first;
-            int spot = roll + firstSpot;
-
-            //other rolls: tell them what square they are on
-            if (roll >= 2 && roll <= 12) {
-
-                //first spot
-                System.out.println("You are now on square " + first);
-                              
             } else {
                 if (roll == 0) {
-                    System.out.println("You quit");
+                    System.out.println("YOU QUIT");
                     break;
+
                 }
             }
+
+
+            // if the player lands on 53 move the player to 19
+            //  if (spot == 53) {
+            //  spot - 34;
+            //System.out.println("You are now on square " + spot);
+
+            // if the player lands on 90 move the player to 48
+            //  if (spot == 90) {
+            //  spot - 42;
+            //System.out.println("You are now on square " + spot);
+
+            // if the player lands on 99 move the player to 77
+            //  if (spot == 99) {
+            //  spot - 22;
+            //System.out.println("You are now on square " + spot);
             
-            //ask for the sum of the dice           
-            System.out.println("Enter the sum of the dice:");
-            
-             //adding amount of dice to previous spot
-                System.out.println("Your are now on square " + roll);
+            // if the player lands on 9 move the player to 34
+            //  if (spot == 9) {
+            //  spot + 25;
+            //System.out.println("You are now on square " + spot);
 
-                
-            }
+            // if the player lands on 40 move the player to 64
+            //  if (spot == 40) {
+            //  spot + 24;
+            //System.out.println("You are now on square " + spot);
 
-
+            // if the player lands on 67 move the player to 86
+            //  if (spot == 67) {
+            //  spot + 19;
+            //System.out.println("You are now on square " + spot);
 
 
         }
+
+
+
+
     }
+}
 }
