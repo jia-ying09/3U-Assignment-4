@@ -17,84 +17,65 @@ public class A4Q7 {
     public static void main(String[] args) {
         // import scanner
         Scanner input = new Scanner(System.in);
-        //calculating the number
 
-        System.out.println("Enter the sum of the dice:");
+        //put player on square 1
+        int one = + 1;
 
-        int roll = input.nextInt() + 1;
-
-        //ask for the sum of the dice
-        while (roll >= 3 && roll <= 13) {
-
-            //first spot
-            System.out.println("You are now on square " + roll);
-
-            while (roll == 0) {
-                System.out.println("You quit");
-
-            }
-        }
         while (true) {
-            int spot = roll;
-            //other rolls: tell them what square they are on              
-            //ask for the sum of the dice      
-            System.out.println("Enter the sum of the dice:");
-            if (roll >= 3 && roll <= 13) {
-                
-                //first spot 
-                int square = roll + spot;
-                System.out.println("You are now on square " + square);
-                
-                System.out.println("Enter the sum of the dice:");
-                input.nextInt;
-                // spot 
-                System.out.println("You are now on square " + square);
 
-            } else {
-                if (roll == 0) {
-                    System.out.println("YOU QUIT");
-                    break;
+            //roll dice
+            
+            System.out.println("Enter the sum of the dice");
+            int roll = input.nextInt() + 1;  
+            System.out.println("You are now on square " + roll);
+            if (roll >= 2 && roll <= 12){
 
-                }
+            //move player
+            int spot = roll + one ;
+            int square = input.nextInt() + spot;
+
+            //tell player what their square is
+            System.out.println("You are now on square " + square);
+
+            //if the player lands on a snake
+            //if the player lands on 53 move the player to 19
+            if (square == 53) {
+                square = square - 34;
+                System.out.println("You are now on square " + square);
             }
-
-
-            // if the player lands on 53 move the player to 19
-            //  if (spot == 53) {
-            //  spot - 34;
-            //System.out.println("You are now on square " + spot);
 
             // if the player lands on 90 move the player to 48
-            //  if (spot == 90) {
-            //  spot - 42;
-            //System.out.println("You are now on square " + spot);
+            if (square == 90) {
+                square = square - 42;
+                System.out.println("You are now on square " + square);}
 
-            // if the player lands on 99 move the player to 77
-            //  if (spot == 99) {
-            //  spot - 22;
-            //System.out.println("You are now on square " + spot);
+                // if the player lands on 99 move the player to 77
+                if (square == 99) {
+                    square = square - 22;
+                    System.out.println("You are now on square " + square);}
+
+                    
+                    //if the player lands on a ladder
+                    // if the player lands on 9 move the player to 34
+                    if (square == 9) {
+                        square = square + 25;
+                        System.out.println("You are now on square " + square);}
+
+                        // if the player lands on 40 move the player to 64
+                        if (square == 40) {
+                            square = square + 24;
+                            System.out.println("You are now on square " + square);}
+
+                            // if the player lands on 67 move the player to 86
+                            if (square == 67) {
+                                square = square + 19;
+                                System.out.println("You are now on square " + square);}
+                            
+                            if (square == 100) {
+                                System.out.println("YOU WIN!");
+                                break;
+                            }
             
-            // if the player lands on 9 move the player to 34
-            //  if (spot == 9) {
-            //  spot + 25;
-            //System.out.println("You are now on square " + spot);
-
-            // if the player lands on 40 move the player to 64
-            //  if (spot == 40) {
-            //  spot + 24;
-            //System.out.println("You are now on square " + spot);
-
-            // if the player lands on 67 move the player to 86
-            //  if (spot == 67) {
-            //  spot + 19;
-            //System.out.println("You are now on square " + spot);
-
-
-        }
-
-
-
-
-    }
-}
-}
+                            }
+                        }
+                    }
