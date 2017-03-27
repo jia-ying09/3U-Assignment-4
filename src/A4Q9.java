@@ -50,6 +50,12 @@ public class A4Q9 extends javax.swing.JFrame {
 
         result.setText("Result:");
 
+        output.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                outputActionPerformed(evt);
+            }
+        });
+
         add.setText("Addition");
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,6 +211,10 @@ public class A4Q9 extends javax.swing.JFrame {
         //outputting the answer
         output.setText("The answer is " + div);
     }//GEN-LAST:event_divActionPerformed
+
+    private void outputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_outputActionPerformed
 
     /**
      * @param args the command line arguments
