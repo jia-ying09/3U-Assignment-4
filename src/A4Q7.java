@@ -19,63 +19,80 @@ public class A4Q7 {
         Scanner input = new Scanner(System.in);
 
         //put player on square 1
-        int one = + 1;
+        int one = +1;
 
         while (true) {
 
-            //roll dice
-            
+            //ask the player the sum of dice
             System.out.println("Enter the sum of the dice");
-            int roll = input.nextInt() + 1;  
-            System.out.println("You are now on square " + roll);
-            if (roll >= 2 && roll <= 12){
 
-            //move player
-            int spot = roll + one ;
-            int square = input.nextInt() + spot;
+            //input roll
+            int roll = input.nextInt();
 
-            //tell player what their square is
-            System.out.println("You are now on square " + square);
+            //calculating the spot togo to
+            one = one + roll;
 
-            //if the player lands on a snake
-            //if the player lands on 53 move the player to 19
-            if (square == 53) {
-                square = square - 34;
-                System.out.println("You are now on square " + square);
-            }
+            //telling the player what spot they are on
+            System.out.println("You are now on square " + one);
+               
+            //if player inputs 0 they quit the game
+            if (roll == 0) {
+                System.out.println("YOU QUIT");
+                break;
 
-            // if the player lands on 90 move the player to 48
-            if (square == 90) {
-                square = square - 42;
-                System.out.println("You are now on square " + square);}
+            } else {
 
-                // if the player lands on 99 move the player to 77
-                if (square == 99) {
-                    square = square - 22;
-                    System.out.println("You are now on square " + square);}
+                //move if the player rolls between 2-12
+                if (roll >= 2 && roll <= 12) {
 
+                    //move player
+                    int square = input.nextInt() + one;
+                    square = one + square;
                     
+                    //if the player lands on a snake
+                    //if the player lands on 53 move the player to 19
+                    if (square == 53) {
+                        square = square - 34;
+                    }
+
+                    // if the player lands on 90 move the player to 48
+                    if (square == 90) {
+                        square = square - 42;
+                    }
+
+                    // if the player lands on 99 move the player to 77
+                    if (square == 99) {
+                        square = square - 22;
+                    }
+
+
                     //if the player lands on a ladder
                     // if the player lands on 9 move the player to 34
                     if (square == 9) {
                         square = square + 25;
-                        System.out.println("You are now on square " + square);}
-
-                        // if the player lands on 40 move the player to 64
-                        if (square == 40) {
-                            square = square + 24;
-                            System.out.println("You are now on square " + square);}
-
-                            // if the player lands on 67 move the player to 86
-                            if (square == 67) {
-                                square = square + 19;
-                                System.out.println("You are now on square " + square);}
-                            
-                            if (square == 100) {
-                                System.out.println("YOU WIN!");
-                                break;
-                            }
-            
-                            }
-                        }
                     }
+
+                    // if the player lands on 40 move the player to 64
+                    if (square == 40) {
+                        square = square + 24;
+                    }
+
+                    // if the player lands on 67 move the player to 86
+                    if (square == 67) {
+                        square = square + 19;
+                    }
+
+                    if (square >= 100) {
+                        System.out.println("YOU WIN!");
+                        break;
+                    }
+
+                  
+                    //tell player what their square is
+                    System.out.println("You are now on square " + square);
+
+                }
+            }
+        }
+    }
+}

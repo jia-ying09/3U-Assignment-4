@@ -18,6 +18,7 @@ public class A4Q1 {
     public static void main(String[] args) {
         //creating a scanner to get user input
         Scanner input = new Scanner(System.in);
+        
         //asking user to enter name
         System.out.println("Please enter your name:");
 
